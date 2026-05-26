@@ -1,58 +1,630 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>【版本1】2026田家炳杯校内选拔赛复盘</title>
-<style>
-:root{--bg:#fdfae7;--paper:#fffdf1;--ink:#111;--muted:#666;--blue:#1e2bfa;--b:rgba(30,43,250,.2);--card:rgba(30,43,250,.055);--shadow:0 18px 45px rgba(17,17,17,.08);--r:20px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 86% 6%,rgba(30,43,250,.15),transparent 28%),var(--bg);font-family:"Inter","PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:var(--ink)}body.dark{--bg:#071025;--paper:#0e1832;--ink:#fdfae7;--muted:#cbd5e1;--b:rgba(255,255,255,.18);--card:rgba(255,255,255,.06);--blue:#9db5ff;--shadow:0 18px 45px rgba(0,0,0,.32)}.line{position:fixed;top:0;left:0;height:4px;background:var(--blue);z-index:99;width:0}.top{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:14px 5vw;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--b)}.brand{font-weight:900;letter-spacing:-.03em;display:flex;align-items:center;gap:10px}.mark{width:34px;height:34px;border-radius:10px;background:var(--blue);color:var(--bg);display:grid;place-items:center}.nav{display:flex;gap:8px;flex-wrap:wrap}.btn,.nav a{border:1px solid var(--b);background:var(--card);color:var(--ink);padding:8px 12px;border-radius:999px;text-decoration:none;cursor:pointer;font-weight:700}.btn:hover,.nav a:hover{background:var(--blue);color:var(--bg)}main{padding:0 5vw 72px}.hero{min-height:78vh;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}.eyebrow{color:var(--blue);font-weight:900;letter-spacing:.16em;font-size:13px;text-transform:uppercase}h1{font-size:clamp(40px,6vw,82px);line-height:1.03;letter-spacing:-.06em;margin:18px 0 20px}h2{font-size:clamp(30px,3.2vw,48px);line-height:1.1;letter-spacing:-.04em;margin:0 0 14px}h3{font-size:22px;margin:0 0 10px;letter-spacing:-.03em}p{color:var(--muted);line-height:1.75}.lead{font-size:18px}.card{background:var(--card);border:1.5px solid var(--b);border-radius:var(--r);box-shadow:var(--shadow);padding:22px}.paper{background:var(--paper)}.heroStats{display:grid;gap:14px}.metric{font-size:58px;font-weight:900;color:var(--blue);line-height:1}.miniGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.mini{border:1px solid var(--b);border-radius:16px;padding:14px;background:var(--paper)}.mini b{font-size:26px;color:var(--blue);display:block}.section{margin-top:58px;border-top:1px solid var(--b);padding-top:34px}.sectionHead{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:20px}.grid{display:grid;gap:18px}.cols2{grid-template-columns:repeat(2,minmax(0,1fr))}.cols3{grid-template-columns:repeat(3,minmax(0,1fr))}.groupBoard{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.group{background:var(--paper);border:1.5px solid var(--b);border-radius:18px;padding:18px}.chip{display:inline-flex;margin:5px 5px 0 0;padding:7px 10px;border:1px solid var(--b);background:rgba(30,43,250,.08);border-radius:999px;font-weight:800}.privacy{border:1px dashed var(--b);border-radius:16px;background:var(--paper);padding:14px;color:var(--muted);font-size:14px}.filters{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 18px}.filter.active{background:var(--blue);color:var(--bg)}input.search,select{border:1px solid var(--b);background:var(--paper);color:var(--ink);border-radius:999px;padding:10px 14px;min-width:210px}.student{display:grid;gap:12px}.studentHead{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.badge{background:var(--blue);color:var(--bg);border-radius:999px;padding:8px 12px;font-weight:900}.track{color:var(--blue);border:1px solid var(--b);border-radius:999px;padding:3px 8px;font-size:12px;margin-left:8px}.verdict{background:var(--paper);border-left:5px solid var(--blue);border-radius:12px;padding:14px;color:var(--muted);line-height:1.7}.q{display:inline-flex;background:rgba(30,43,250,.08);border:1px solid var(--b);color:var(--blue);border-radius:999px;padding:7px 12px;font-weight:900}details{background:var(--paper);border:1px solid var(--b);border-radius:14px;padding:12px}summary{cursor:pointer;font-weight:900;color:var(--blue)}li{margin:8px 0;color:var(--muted);line-height:1.65}.standards .card{box-shadow:none;background:var(--paper)}.fw{display:grid;grid-template-columns:80px 1fr;gap:10px;margin:10px 0}.fw b{color:var(--blue)}.timeline{position:relative}.day{display:grid;grid-template-columns:120px 1fr;gap:16px;margin:0 0 14px}.date{font-weight:900;color:var(--blue);border:1px solid var(--b);border-radius:14px;padding:12px;background:var(--paper);text-align:center}.task{background:var(--card);border:1px solid var(--b);border-radius:16px;padding:16px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.tabPanel{display:none}.tabPanel.active{display:block}.toolText{white-space:pre-wrap;line-height:1.8;color:var(--muted)}footer{padding:26px 5vw;border-top:1px solid var(--b);color:var(--muted);display:flex;justify-content:space-between;gap:12px}.hidden{display:none!important}@media(max-width:900px){.hero,.cols2,.cols3,.groupBoard{grid-template-columns:1fr}.sectionHead,.studentHead,footer{display:block}.day{grid-template-columns:1fr}.nav{display:none}}@media print{.top,.filters,.tabs,.btn{display:none!important}body{background:#fff}.card{box-shadow:none;break-inside:avoid}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026田家炳杯校内选拔赛复盘 · 动态交互版</title>
+  <style>
+    :root{
+      --bg:#fdfae7;
+      --paper:#fffdf1;
+      --ink:#111111;
+      --muted:#666;
+      --light:#8a8a8a;
+      --blue:#1e2bfa;
+      --blue-08:rgba(30,43,250,.08);
+      --blue-15:rgba(30,43,250,.15);
+      --blue-20:rgba(30,43,250,.20);
+      --card:rgba(30,43,250,.04);
+      --border:rgba(30,43,250,.20);
+      --green:#059669;
+      --red:#dc2626;
+      --amber:#b45309;
+      --shadow: 0 18px 45px rgba(17,17,17,.08);
+      --radius:18px;
+      --font: "Inter", "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      --display: "Space Grotesk", "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--font);
+      background:
+        radial-gradient(circle at 88% 8%, rgba(30,43,250,.13), transparent 28%),
+        linear-gradient(135deg, rgba(30,43,250,.035), transparent 22%),
+        var(--bg);
+      color:var(--ink);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+    body.dark{
+      --bg:#071025;
+      --paper:#0e1832;
+      --ink:#fdfae7;
+      --muted:#cbd5e1;
+      --light:#9aa8bd;
+      --card:rgba(255,255,255,.05);
+      --border:rgba(255,255,255,.16);
+      --blue:#9db5ff;
+      --blue-08:rgba(157,181,255,.10);
+      --blue-15:rgba(157,181,255,.16);
+      --blue-20:rgba(157,181,255,.24);
+      --shadow:0 18px 45px rgba(0,0,0,.28);
+    }
+    .progress-line{position:fixed;top:0;left:0;height:4px;background:var(--blue);z-index:999;width:0%}
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:14px 4vw;
+      background:color-mix(in srgb, var(--bg) 86%, transparent);
+      backdrop-filter: blur(14px);
+      border-bottom:1px solid var(--border);
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;letter-spacing:-.03em}
+    .brand-badge{width:34px;height:34px;border-radius:10px;background:var(--blue);color:var(--bg);display:grid;place-items:center;font-size:18px;box-shadow:0 10px 25px rgba(30,43,250,.22)}
+    .nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .nav a,.nav button,.ghost-btn{
+      border:1px solid var(--border);background:var(--card);color:var(--ink);text-decoration:none;
+      padding:8px 12px;border-radius:999px;font-size:13px;cursor:pointer;transition:.2s ease;font-family:var(--font)
+    }
+    .nav a:hover,.nav button:hover,.ghost-btn:hover{background:var(--blue);color:var(--bg);transform:translateY(-1px)}
+    main{padding:0 4vw 80px}
+    section{scroll-margin-top:86px}
+    .hero{min-height:86vh;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:70px 0 42px;position:relative}
+    .eyebrow{font-family:var(--display);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:800;margin-bottom:18px}
+    h1{font-family:var(--display);font-size:clamp(42px,6.2vw,86px);line-height:1.02;letter-spacing:-.06em;margin:0 0 22px;max-width:980px}
+    h2{font-family:var(--display);font-size:clamp(30px,3.2vw,46px);line-height:1.08;letter-spacing:-.04em;margin:0 0 18px}
+    h3{font-family:var(--display);font-size:22px;letter-spacing:-.03em;margin:0 0 10px}
+    p{line-height:1.72;color:var(--muted);font-size:16px;margin:0 0 14px}
+    .lead{font-size:18px;max-width:790px;color:var(--muted)}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .primary-btn{background:var(--blue);color:var(--bg);border:none;border-radius:999px;padding:13px 22px;font-weight:800;cursor:pointer;font-family:var(--font);box-shadow:0 14px 28px rgba(30,43,250,.16);text-decoration:none;display:inline-flex;align-items:center;gap:9px}
+    .primary-btn:hover{transform:translateY(-1px)}
+    .hero-panel{
+      border:1.5px solid var(--border);background:var(--card);border-radius:28px;padding:22px;box-shadow:var(--shadow);position:relative;overflow:hidden
+    }
+    .hero-panel:before{content:"";position:absolute;inset:auto -80px -100px auto;width:240px;height:240px;border-radius:50%;background:var(--blue-15)}
+    .score-card{background:var(--paper);border:1px solid var(--border);border-radius:20px;padding:20px;margin-bottom:14px;position:relative;z-index:1}
+    .score-card.big{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:end}
+    .metric{font-family:var(--display);font-size:clamp(38px,5vw,64px);font-weight:900;color:var(--blue);line-height:1}
+    .metric-label{font-size:13px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;font-weight:800;margin-top:6px}
+    .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    .mini{border:1px solid var(--border);border-radius:16px;padding:14px;background:var(--card)}
+    .mini strong{display:block;font-family:var(--display);font-size:26px;color:var(--blue)}
+    .mini span{font-size:12px;color:var(--muted)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin:62px 0 24px;border-top:1px solid var(--border);padding-top:34px}
+    .section-head p{max-width:720px}
+    .tag{display:inline-flex;border-radius:999px;background:var(--blue-08);color:var(--blue);font-weight:800;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px}
+    .grid{display:grid;gap:18px}
+    .grid.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card.flat{box-shadow:none;background:var(--paper)}
+    .kpi-title{font-family:var(--display);font-weight:800;color:var(--blue);font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+    .kpi-number{font-family:var(--display);font-weight:900;font-size:40px;color:var(--ink);line-height:1.1;margin-top:12px}
+    .kpi-note{font-size:13px;color:var(--muted);line-height:1.5;margin-top:10px}
+    .bar-chart{display:grid;gap:10px;margin-top:10px}
+    .bar-row{display:grid;grid-template-columns:94px 1fr 58px;align-items:center;gap:10px;font-size:13px;color:var(--muted)}
+    .bar-name{font-weight:800;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .track-pill{border:1px solid var(--border);background:var(--blue-08);color:var(--blue);border-radius:999px;padding:3px 9px;font-size:12px;margin-left:6px;font-weight:800}
+    .bar-track{height:12px;background:rgba(30,43,250,.10);border-radius:999px;overflow:hidden;border:1px solid var(--border)}
+    .bar-fill{height:100%;background:linear-gradient(90deg,var(--blue),color-mix(in srgb,var(--blue) 48%,#fff));border-radius:999px;width:0;transition:width .7s cubic-bezier(.2,.8,.2,1)}
+    .support-board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:8px}
+    .support-column{background:var(--paper);border:1.5px solid var(--border);border-radius:18px;padding:16px;min-height:230px}
+    .support-column h4{font-family:var(--display);font-size:18px;margin:0 0 8px;letter-spacing:-.03em;color:var(--ink)}
+    .support-column p{font-size:13px;line-height:1.55;margin:0 0 12px;color:var(--muted)}
+    .name-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);background:var(--blue-08);border-radius:999px;padding:7px 10px;margin:4px 4px 4px 0;font-size:13px;font-weight:800;color:var(--ink)}
+    .name-chip small{font-weight:900;color:var(--blue)}
+    .privacy-note{border:1px dashed var(--border);background:var(--paper);border-radius:16px;padding:14px 16px;color:var(--muted);font-size:14px;line-height:1.65;margin-top:14px}
+    .support-level{font-family:var(--display);font-size:18px;line-height:1.2;font-weight:900;color:var(--blue);background:var(--paper);border:1.5px solid var(--border);border-radius:999px;padding:10px 14px;white-space:nowrap}
+    .standards-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .discipline-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .discipline-card:before{content:"";position:absolute;right:-70px;top:-70px;width:180px;height:180px;border-radius:999px;background:var(--blue-08)}
+    .discipline-card h3{display:flex;align-items:center;gap:10px;position:relative;z-index:1}
+    .discipline-card .big-letter{font-family:var(--display);font-size:44px;color:var(--blue);font-weight:900;line-height:1}
+    .framework{display:grid;grid-template-columns:88px 1fr;gap:10px;margin-top:12px;position:relative;z-index:1}
+    .framework b{color:var(--blue);font-family:var(--display)}
+    .framework div{font-size:14px;color:var(--muted);line-height:1.65;border-top:1px solid var(--border);padding-top:10px}
+    .focus-list{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px;position:relative;z-index:1}
+    .focus-list li{background:var(--paper);border:1px solid var(--border);border-radius:12px;padding:10px 12px;color:var(--muted);font-size:14px;line-height:1.55}
+    .focus-list li strong{color:var(--ink)}
+    .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:8px 0 22px}
+    .chip{border:1px solid var(--border);background:var(--paper);color:var(--ink);border-radius:999px;padding:9px 14px;font-weight:800;cursor:pointer;font-family:var(--font)}
+    .chip.active,.chip:hover{background:var(--blue);color:var(--bg)}
+    .search{flex:1;min-width:220px;border:1px solid var(--border);background:var(--paper);color:var(--ink);border-radius:999px;padding:11px 16px;font-family:var(--font);outline:none}
+    select.search{max-width:180px}
+    .student-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .student-card{position:relative;overflow:hidden;transition:.25s ease}
+    .student-card:hover{transform:translateY(-2px)}
+    .student-header{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:14px}
+    .rank-badge{width:54px;height:54px;border-radius:16px;border:1.5px solid var(--border);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:22px;color:var(--blue);background:var(--paper)}
+    .student-title{display:flex;gap:14px;align-items:center}
+    .student-title h3{margin-bottom:4px}
+    .score{font-family:var(--display);font-size:34px;line-height:1;font-weight:900;color:var(--blue)}
+    .score small{font-size:12px;color:var(--muted);font-family:var(--font);display:block;text-align:right;font-weight:700;margin-top:4px}
+    .verdict{border-left:4px solid var(--blue);padding:12px 14px;background:var(--paper);border-radius:0 12px 12px 0;color:var(--muted);line-height:1.6;margin:14px 0}
+    details{border:1px solid var(--border);border-radius:14px;background:var(--paper);margin-top:10px;overflow:hidden}
+    summary{cursor:pointer;list-style:none;padding:13px 15px;font-weight:900;font-family:var(--display);display:flex;justify-content:space-between;color:var(--ink)}
+    summary::-webkit-details-marker{display:none}
+    summary:after{content:"＋";color:var(--blue)}
+    details[open] summary:after{content:"－"}
+    .detail-body{padding:0 15px 14px;color:var(--muted);font-size:14px;line-height:1.75}
+    .detail-body ul{margin:8px 0 0 20px;padding:0}
+    .task-list{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}
+    .task{font-size:12px;border:1px solid var(--border);border-radius:12px;background:var(--paper);padding:8px;display:flex;gap:6px;align-items:center;color:var(--muted)}
+    .task input{accent-color:var(--blue)}
+    .problem-card{cursor:pointer;position:relative;overflow:hidden;min-height:210px}
+    .problem-card .num{font-family:var(--display);font-size:60px;font-weight:900;color:var(--blue);opacity:.18;line-height:1}
+    .problem-card.active{background:var(--paper);outline:2px solid var(--blue)}
+    .problem-detail{display:none;margin-top:18px}
+    .problem-detail.active{display:grid;animation:fadeIn .3s ease}
+    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+    .tab-panel{display:none}
+    .tab-panel.active{display:block;animation:fadeIn .3s ease}
+    .script-grid{display:grid;grid-template-columns:160px 1fr 1fr;gap:0;border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--paper)}
+    .script-grid > div{padding:14px;border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
+    .script-grid > div:nth-child(3n){border-right:none}
+    .script-grid .head{background:var(--blue);color:var(--bg);font-weight:900;font-family:var(--display)}
+    .timeline{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-top:20px}
+    .timeline:before{content:"";position:absolute;top:34px;left:6%;right:6%;height:2px;background:var(--border);z-index:0}
+    .timeline.sprint:before{display:none}
+    .week{position:relative;z-index:1;background:var(--paper);border:1.5px solid var(--border);border-radius:18px;padding:18px}
+    .week-dot{width:34px;height:34px;border-radius:50%;background:var(--blue);color:var(--bg);display:grid;place-items:center;font-weight:900;margin-bottom:14px;font-family:var(--display)}
+    .quote{font-size:clamp(22px,2.3vw,34px);font-family:var(--display);line-height:1.35;letter-spacing:-.04em;color:var(--ink)}
+    .source-note{font-size:13px;color:var(--light);line-height:1.65}
+    .footer{padding:32px 4vw 44px;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+    .reveal{opacity:0;transform:translateY(16px);transition:.65s cubic-bezier(.2,.8,.2,1)}
+    .reveal.visible{opacity:1;transform:none}
+    .empty{padding:44px;text-align:center;border:1px dashed var(--border);border-radius:18px;color:var(--muted);background:var(--paper)}
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr;min-height:auto}
+      .grid.cols-4,.grid.cols-3,.grid.cols-2,.student-grid,.timeline,.standards-grid,.support-board{grid-template-columns:1fr}
+      .section-head{display:block}
+      .script-grid{grid-template-columns:1fr}
+      .script-grid > div{border-right:none!important}
+      .task-list{grid-template-columns:repeat(2,1fr)}
+      .nav{display:none}
+    }
+    @media print{
+      .topbar,.hero-actions,.filters,.task-list,.progress-line{display:none!important}
+      body{background:white;color:#111}
+      main{padding:0}
+      .hero{min-height:auto;padding:20px 0;grid-template-columns:1fr}
+      .card,.score-card,.week{box-shadow:none;break-inside:avoid;background:white}
+      details{break-inside:avoid} details:not([open]) .detail-body{display:block}
+      .student-grid{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
-<div class="line" id="line"></div>
-<header class="top"><div class="brand"><span class="mark">田</span><span>【版本1】2026田家炳杯校内选拔赛复盘</span></div><nav class="nav"><a href="#overview">概览</a><a href="#students">逐生诊断</a><a href="#standards">学科要点</a><a href="#timeline">冲刺路线</a><a href="#tools">工具箱</a><button class="btn" onclick="document.body.classList.toggle('dark')">深色/浅色</button><button class="btn" onclick="window.print()">打印/PDF</button></nav></header>
-<main>
-<section class="hero"><div><div class="eyebrow">Interactive Review · Developmental Feedback</div><h1>【版本1】2026田家炳杯<br>校内选拔赛复盘</h1><p class="lead">本页面用于指导老师与参赛同学进行内部复盘。呈现方式采用“发展性支持分组”，避免公开强化分数与排名，重点转向每位同学的优势、风险与可执行改进动作。</p><p>核心判断：同学们普遍已经具备完整教案雏形，但距离正式比赛需要完成四个转变：从“补内容”转向“减内容”，从“讲设计”转向“演课堂”，从“有活动”转向“有生成”，从“有技术”转向“技术真正支持学习”。</p><p><a class="btn" href="#students">查看逐生诊断</a> <a class="btn" href="#timeline">查看10天冲刺路线</a></p></div><div class="heroStats"><div class="card paper"><div class="metric">10</div><p>位小学教育专业研究生完成校内选拔赛试讲与教学设计展示。</p></div><div class="miniGrid"><div class="mini"><b>4</b><span>语文/数学/英语/科学</span></div><div class="mini"><b>15</b><span>分钟无生授课视频上限</span></div><div class="mini"><b>6.9</b><span>教学设计与视频提交节点</span></div></div><div class="privacy">呈现原则：内部指导可参考评分数据，但集体分享时不强调具体分数，改用 A/B 两个发展性支持组，保护后几名同学心态。</div></div></section>
-<section id="overview" class="section"><div class="sectionHead"><div><h2>备赛支持分组</h2><p>分组不是能力标签，而是备赛资源投放方式。A组优先做样片与细节打磨；B组重点进行专项突破和课堂重构。</p></div></div><div class="groupBoard"><div class="group"><h3>A组 · 重点打磨</h3><p>已具备较完整参赛雏形，优先打磨样片、追问链、PPT结构和课堂生成。</p><span class="chip">科学 赖陈阳</span><span class="chip">语文 李雅旻</span><span class="chip">数学 沈卓琼</span><span class="chip">科学 王琼</span><span class="chip">语文 谢基华</span></div><div class="group"><h3>B组 · 专项提升</h3><p>已有亮点，但需集中处理主问题聚焦、课堂容量、语言支架、真实素材和无生授课现场感。</p><span class="chip">英语 陈红</span><span class="chip">数学 董芝伶</span><span class="chip">语文 李晓晴</span><span class="chip">语文 辛斯炀</span><span class="chip">英语 张文慧</span></div></div></section>
-<section id="students" class="section"><div class="sectionHead"><div><h2>逐生复盘：优点、不足与下一步动作</h2><p>可按学科筛选，也可搜索学生姓名、课题或关键词。</p></div></div><div class="filters"><button class="btn filter active" data-f="全部">全部</button><button class="btn filter" data-f="语文">语文</button><button class="btn filter" data-f="数学">数学</button><button class="btn filter" data-f="英语">英语</button><button class="btn filter" data-f="科学">科学</button><input class="search" id="search" placeholder="搜索：学生/课题/风险/动作"><select id="sort"><option value="group">按支持组</option><option value="track">按学科</option><option value="name">按姓名</option></select><button class="btn" id="expand">展开全部</button></div><div id="studentGrid" class="grid cols2"></div></section>
-<section id="standards" class="section standards"><div class="sectionHead"><div><h2>四大学科课标取向与比赛课授课要点</h2><p>比赛课要把各学科的“改革关键词”落实为可观察的课堂行为，而不是停留在教案理念表述。</p></div></div><div class="grid cols2"><div class="card"><h3>小学英语：What-How-Why 框架</h3><div class="fw"><b>What</b><div>语篇/主题/语言知识/文化意义是什么。先回答学生到底要理解什么、表达什么。</div><b>How</b><div>通过英语学习活动观组织“学习理解—应用实践—迁移创新”，借助情境、任务、支架和互动完成语言实践。</div><b>Why</b><div>指向核心素养：语言能力、文化意识、思维品质、学习能力。大单元教学要让语言服务真实交际和意义建构。</div></div><ul><li>少讲语法术语，多做可听、可说、可演的交际任务。</li><li>课堂指令短句化、动作化、重复化。</li><li>语言准确性是底线，拼写、语音、语调必须专项校对。</li></ul></div><div class="card"><h3>小学语文：语文要素—文本证据—表达迁移</h3><div class="fw"><b>读什么</b><div>围绕单元语文要素和课文核心价值确定主问题。</div><b>怎么读</b><div>抓关键词句、朗读层次、人物语言、表达方法和文本证据，避免背景资料喧宾夺主。</div><b>为什么</b><div>实现语言建构、思维发展、审美鉴赏、文化传承，最终落到表达迁移。</div></div><ul><li>语文课不能被历史、德育、AI图像替代。</li><li>每个价值判断都要回到词句。</li><li>结尾应回到朗读、背诵、复述或小练笔。</li></ul></div><div class="card"><h3>小学数学：概念冲突—操作表征—抽象建模</h3><div class="fw"><b>是什么</b><div>弄清本课核心概念、前概念和学生易错点。</div><b>怎么教</b><div>通过问题冲突、实物操作、图形表征、语言概括，让学生经历概念生成。</div><b>为什么</b><div>发展数感、量感、几何直观、推理意识、模型意识和应用意识。</div></div><ul><li>不要直接给定义，要让定义从活动中长出来。</li><li>板书必须留下数学结构。</li><li>追问要指向“依据、关系、变化、不变”。</li></ul></div><div class="card"><h3>小学科学：真实情境—证据链—模型解释</h3><div class="fw"><b>是什么</b><div>学生要形成哪一条科学观念或核心概念。</div><b>怎么探</b><div>经历预测、实验、记录、交流、解释，用证据支持结论。</div><b>为什么</b><div>发展科学观念、科学思维、探究实践、态度责任。</div></div><ul><li>卡通情境可以导入，但不能削弱科学严谨性。</li><li>实验不是表演，必须有学生预测、记录与解释。</li><li>PPT要服务证据记录和模型建构。</li></ul></div></div></section>
-<section id="timeline" class="section"><div class="sectionHead"><div><h2>6月9日提交倒排：10天冲刺路线图</h2><p>按5月27日至6月5日规划核心冲刺；6月5—6日进入正式录制；6月7—8日完成核验与上传准备；6月9日提交。</p></div></div><div class="timeline" id="timelineBox"></div></section>
-<section id="problems" class="section"><div class="sectionHead"><div><h2>共性问题与修正动作</h2><p>把复盘意见转化为训练清单。</p></div></div><div class="grid cols2"><div class="card paper"><h3>1. 设计完整但不够锋利</h3><p>理念、目标、活动、资源过多，亮点被稀释。修正：一节课只保留一个主问题、一个核心活动、一个关键生成和一个明确迁移。</p></div><div class="card paper"><h3>2. 无生授课像汇报教案</h3><p>教师讲流程多，虚拟学生、等待、追问和评价不足。修正：写出学生预设、错误生成、即时评价和过渡语。</p></div><div class="card paper"><h3>3. PPT没有成为教学工具</h3><p>图片与动画不少，但没有推动思考。修正：PPT只承担呈现情境、推动思考、留下结构三种功能。</p></div><div class="card paper"><h3>4. 评价写得多但用得少</h3><p>评价表常停留在教案里。修正：把评价嵌入预测、实验、朗读、对话、表达等关键节点。</p></div></div></section>
-<section id="tools" class="section"><div class="sectionHead"><div><h2>备赛工具箱</h2><p>直接复制到辅导材料、脚本或PPT备注中使用。</p></div></div><div class="tabs"><button class="btn tab active" data-t="script">15分钟脚本</button><button class="btn tab" data-t="ppt">PPT重构</button><button class="btn tab" data-t="eval">评价语</button><button class="btn tab" data-t="anon">提交核验</button></div><div class="card paper"><div id="script" class="tabPanel active toolText">0:00—1:30 情境导入，提出核心问题。
-1:30—5:00 初步观察、预测、朗读或尝试表达，形成第一轮发现。
-5:00—10:00 核心活动展开，暴露错误或形成证据。
-10:00—13:00 抽象概念、总结方法或提升表达。
-13:00—15:00 迁移练习、课堂小结、板书回扣。</div><div id="ppt" class="tabPanel toolText">比赛型PPT页序：封面—学习情境—核心问题—任务一—学生预设—关键材料—活动过程—生成结果—方法总结—迁移练习—课堂小结—板书呈现。
-原则：少字、大图、强问题、显结构。图片必须服务问题，动画必须服务概念变化。</div><div id="eval" class="tabPanel toolText">肯定性评价：你不仅说出了结果，还说出了依据。
-推进性评价：这个想法很有价值，但我们还要看证据是否支持。
-纠偏性评价：你关注到了分成几份，但还没有注意每份是否一样多。
-生成性评价：谁能顺着他的思路，把这一步说得更完整？</div><div id="anon" class="tabPanel toolText">提交前核验：
-□ 文件首页与文件名一致
-□ 教学设计转PDF，版式规范
-□ 视频不超过15分钟，画面和声音清晰
-□ 作品中不得出现姓名、学校、指导教师等身份信息
-□ 英语赛道书面与口头表达均为英文且已校对
-□ 设计内容与视频内容一致</div></div></section>
-</main><footer><div>© 2026 【版本1】2026田家炳杯校内选拔赛复盘</div><div>GitHub Pages 交互式HTML分享版</div></footer>
-<script>
-const students=[
-{name:'赖陈阳',track:'科学',group:'A组',theme:'《热在水中的传递》',v:'科学探究主线完整，5E结构清楚，是重点打磨对象。',q:'为什么热水会上升、冷水会下沉？',a:['情境、实验、解释、迁移链条完整','能围绕热对流形成模型解释','具备重点打磨和录制样片价值'],r:['“奶龙”情境若处理不好，可能显得卡通化、低龄化，削弱科学课堂严谨感','实验材料较多，15分钟内容易拖沓','理论术语不宜在试讲中外显过多'],m:['保留情境但快速转入科学问题','只打透一个核心实验','板书固定“热水上升—冷水下降—形成循环—热在水中传递”']},
-{name:'李雅旻',track:'语文',group:'A组',theme:'《落花生》',v:'文本、表达方法与育人价值结合较稳定。',q:'父亲为什么借花生教孩子做人？',a:['文本集中，目标明确','能把借物喻人与做有用的人结合','评分稳定，成熟度较高'],r:['价值升华容易口号化','必须回到父亲的话和关键词句','单元/册次等格式信息须核对'],m:['围绕“只讲体面”的“只”字辨析','三步推进：找特点—品父亲的话—仿写表达','少用装饰性技术，突出语文味']},
-{name:'沈卓琼',track:'数学',group:'A组',theme:'《认识周长》',v:'概念建构路径清晰，适合继续强化比赛亮点。',q:'什么叫封闭图形一周的长度？',a:['感知—抽象—测量—应用路径完整','树叶、课本、步道等生活情境贴近学生','操作性强'],r:['较标准但不够惊艳','学生错误生成不够显性','曲边测量与封闭概念需打透'],m:['用“不封闭图形有没有周长”制造冲突','板书“找一周—描一周—量一周—算一周”','突出“化曲为直”']},
-{name:'王琼',track:'科学',group:'A组',theme:'《导体和绝缘体》',v:'证据意识和实验规范较好，课堂容量需压缩。',q:'凭什么判断一种材料是否容易导电？',a:['生日彩灯断路情境自然','预测—检测—记录—分类较完整','有实验记录单和合作评价'],r:['导体、人体导电、安全用电同时展开会过载','实验若只是展示，探究性不足','评价表不能只停留在设计中'],m:['只选4—5种代表材料','突出检测器自检和重复检测','人体导电作为1分钟迁移']},
-{name:'谢基华',track:'语文',group:'A组',theme:'《示儿》',v:'感染力强，但历史与技术资源必须服从古诗文本。',q:'明知万事空，为什么仍然但悲？',a:['知人论世路径有感染力','情境朗读和角色采访能增强体验','“悲”与“盼”的情感线索清楚'],r:['容易变成历史德育课','AI动画、视觉图、背景视频、音乐或角色表演若过多，可能喧宾夺主，稀释文本品读','情感升华过度容易口号化'],m:['视频30—45秒，地图一张足够','围绕“万事空”与“但悲”的矛盾追问','最后回到诵读背诵']},
-{name:'陈红',track:'英语',group:'B组',theme:'Unit 4 Healthy food',v:'主题贴近生活，语言准确性和目标聚焦需提升。',q:'What food would you like for a healthy plate?',a:['食物和健康主题适合三年级','活动有趣','有任务型意识'],r:['拼写、标点和表达错误会影响基本功判断','词汇、句型、健康观念同时推进容量大','课堂指令需短句化'],m:['彻底校对英语','压缩核心词汇','最终任务改为健康餐盘表达']},
-{name:'董芝伶',track:'数学',group:'B组',theme:'《分数的意义》',v:'概念意识较好，试讲节奏和抽象过程需强化。',q:'同样是1/4，为什么具体数量不同？',a:['情境有趣','彩带测量与月饼比较能引出单位1','抓住了关键难点'],r:['内容偏多，15分钟易前松后紧','活动与定义衔接若不紧，概念生成不足','分数单位可能讲得匆忙'],m:['快速制造同样1/4的冲突','板书突出单位1—平均分—取几份','训练完整数学表达']},
-{name:'李晓晴',track:'语文',group:'B组',theme:'《田忌赛马》',v:'创新意识强，但博弈模型需降级为备课逻辑。',q:'孙膑为什么能提出调换顺序的办法？',a:['能围绕人物思维过程设计问题','模型有思维训练价值','契合单元“思维的火花”'],r:['过度模型化会让语文课变成逻辑课','文本朗读和人物对话不足会削弱语文味','“共赢”等总结需谨慎'],m:['学生目标改为读懂孙膑怎么想','每个判断回到文本证据','增加人物对话朗读']},
-{name:'辛斯炀',track:'语文',group:'B组',theme:'《海上日出》',v:'资源主要停留在教学设计中，试讲要回到真实景象与文本语言。',q:'作者为什么说海上日出是伟大的奇观？',a:['写景顺序和关键词品读路径完整','“负、冲、跳”等词有打磨价值','聚焦太阳升起过程后有潜力'],r:['日出视频、希沃白板、电子书包等主要是设计表述，授课过程体现不足','过多使用AI生成图片替代真实生活场景图片和视频，背离写景散文真实观察取向','完整讲全课会导致中心不突出'],m:['优先使用真实日出图片/短视频','只打磨太阳升起过程','朗读分层：变化顺序—画面感—赞叹感']},
-{name:'张文慧',track:'英语',group:'B组',theme:'Unit 6 Shopping',v:'真实交际方向正确，但语言目标过多，需专项重构。',q:'Can I try them on? Are they just right?',a:['购物主题真实','角色扮演有交际意识','关注礼貌表达'],r:['词汇、价格、试穿、单复数、消费观念同时推进，学生负担过重','教师英文说明偏书面化','语音语调和组织若不自然，会像教案汇报'],m:['一课一得，只抓一个交际链','PPT提供商店场景、商品、价格标签、句型框架、角色卡','课堂语言短句化、动作化、重复化']}
-];
-const timeline=[['5月27日','确定每人“一个主问题+一个核心活动+一个关键生成”，删去过载内容。'],['5月28日','重写15分钟无生授课脚本，写出学生预设、错误生成、追问链和评价语。'],['5月29日','重构PPT：少字、大图、强问题、显结构；每页只服务一个教学节点。'],['5月30日','第一轮试讲，重点检查是否像真实课堂，而不是教案汇报。'],['5月31日','根据试讲反馈压缩课堂容量，补强板书、过渡语和课堂评价。'],['6月1日','第二轮试讲，重点打磨开场、核心活动和结尾回扣。'],['6月2日','学科专项校对：英语语言准确性，语文文本证据，数学概念生成，科学实验证据链。'],['6月3日','完成最终PPT、脚本和教学设计PDF匿名化初稿。'],['6月4日','模拟录制，检查出镜、声音、灯光、PPT切换、时间控制。'],['6月5日','定稿并开始正式录制；A组优先录制样片，B组完成最后微调。'],['6月6日','继续正式录制，完成必要补录，筛选最佳版本。'],['6月7日','检查视频时长、画质、声音、匿名信息、教学设计与视频一致性。'],['6月8日','压缩文件、命名、PDF核验、上传预演。'],['6月9日','正式提交教学设计与教学视频。']];
-let filter='全部';let expanded=false;
-function li(a){return '<ul>'+a.map(x=>'<li>'+x+'</li>').join('')+'</ul>'}
-function card(s){return `<article class="card student"><div class="studentHead"><div><h3>${s.name}<span class="track">${s.track}</span></h3><p>${s.theme} · ${s.group==='A组'?'A组 · 重点打磨':'B组 · 专项提升'}</p></div><span class="badge">${s.group}</span></div><div class="verdict"><b>核心判断：</b>${s.v}</div><div class="q">建议主问题：${s.q}</div><details ${expanded?'open':''}><summary>优势</summary>${li(s.a)}</details><details ${expanded?'open':''}><summary>不足与风险</summary>${li(s.r)}</details><details ${expanded?'open':''}><summary>具体改进动作</summary>${li(s.m)}</details></article>`}
-function render(){let q=document.getElementById('search').value.trim().toLowerCase();let arr=students.filter(s=>(filter==='全部'||s.track===filter)&&(s.name+s.track+s.theme+s.v+s.q+s.r.join('')).toLowerCase().includes(q));let sort=document.getElementById('sort').value;arr.sort((a,b)=>sort==='track'?a.track.localeCompare(b.track,'zh')||a.group.localeCompare(b.group,'zh'):sort==='name'?a.name.localeCompare(b.name,'zh'):a.group.localeCompare(b.group,'zh'));document.getElementById('studentGrid').innerHTML=arr.map(card).join('')||'<p>没有找到符合条件的内容。</p>'}
-document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{filter=b.dataset.f;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render()});document.getElementById('search').oninput=render;document.getElementById('sort').onchange=render;document.getElementById('expand').onclick=()=>{expanded=!expanded;document.getElementById('expand').textContent=expanded?'收起全部':'展开全部';render()};document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.tabPanel').forEach(p=>p.classList.remove('active'));document.getElementById(b.dataset.t).classList.add('active')});document.getElementById('timelineBox').innerHTML=timeline.map(x=>`<div class="day"><div class="date">${x[0]}</div><div class="task">${x[1]}</div></div>`).join('');window.onscroll=()=>{let h=document.documentElement.scrollHeight-innerHeight;document.getElementById('line').style.width=Math.min(100,scrollY/h*100)+'%'};render();
-</script>
+  <div class="progress-line" id="progressLine"></div>
+  <header class="topbar">
+    <div class="brand"><div class="brand-badge">田</div><span>校内选拔赛复盘 · Interactive Review</span></div>
+    <nav class="nav">
+      <a href="#overview">总览</a>
+      <a href="#students">学生诊断</a>
+      <a href="#problems">共性问题</a>
+      <a href="#standards">学科要点</a>
+      <a href="#toolkit">备赛工具箱</a>
+      <a href="#roadmap">10天冲刺</a>
+      <button id="themeBtn" type="button">深色模式</button>
+      <button onclick="window.print()" type="button">打印 / PDF</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero reveal" id="top">
+      <div>
+        <div class="eyebrow">2026 TIN KA PING CUP · PRIMARY EDUCATION TEACHING SKILLS</div>
+        <h1>校内选拔赛<br/>深度复盘与备赛诊断</h1>
+        <p class="lead">将“教学设计”与“无生授课”两条线索合并为一个可筛选、可展开、可打印的动态诊断网页。页面采用 zarazhangrui / beautiful-html-templates 中 Blue Professional 的克制蓝色专业风格，适合汇报、备课会与逐生辅导使用。</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#students">开始查看学生画像 →</a>
+          <button class="ghost-btn" id="expandAllBtn" type="button">展开全部诊断</button>
+          <button class="ghost-btn" id="resetTasks" type="button">清空打磨清单</button>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <div class="score-card big">
+          <div>
+            <div class="kpi-title">倒排备赛窗口</div>
+            <div class="metric">10天</div>
+            <div class="metric-label">6月9日提交教学设计与视频</div>
+          </div>
+          <div class="tag">Sprint</div>
+        </div>
+        <div class="score-card">
+          <h3>关键判断</h3>
+          <p>本页改用“发展性诊断组”呈现，不突出具体分数，不把一次选拔结果固化为能力标签。后续训练的中心应从“补内容”转向“减内容”，从“讲设计”转向“演课堂”。</p>
+        </div>
+        <div class="mini-grid">
+          <div class="mini"><strong>10</strong><span>参赛学生</span></div>
+          <div class="mini"><strong>4</strong><span>学科赛道</span></div>
+          <div class="mini"><strong>15′</strong><span>教学视频上限</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="overview" class="reveal">
+      <div class="section-head">
+        <div>
+          <span class="tag">Overview</span>
+          <h2>一眼看清：以“支持需求”呈现，而非强调分数</h2>
+        </div>
+        <p>这里把原始结果转化为两个发展性支持组：A组重点打磨、B组专项提升。这样既保留备赛决策价值，也避免把学生划成过细等级，保护后续训练的积极性。</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card flat"><div class="kpi-title">A组 · 重点打磨</div><div class="kpi-number">5人</div><div class="kpi-note">已具备参赛雏形，重点训练“15分钟样片”和课堂生成。</div></div>
+        <div class="card flat"><div class="kpi-title">B组 · 专项提升</div><div class="kpi-number">5人</div><div class="kpi-note">有明确亮点与发展空间，集中处理主问题聚焦、容量压缩、语言支架与现场感。</div></div>
+        <div class="card flat"><div class="kpi-title">共同冲刺</div><div class="kpi-number">10天</div><div class="kpi-note">6月9日提交，必须倒排录制时间，先减内容，再磨表达。</div></div>
+      </div>
+      <div class="grid" style="margin-top:18px">
+        <div class="card">
+          <div class="student-header">
+            <div><span class="tag">Developmental Grouping</span><h3 style="margin-top:12px">备赛支持分组</h3></div>
+            <button class="ghost-btn" id="showAllChart">重置筛选</button>
+          </div>
+          <div id="barChart"></div>
+          <div class="privacy-note">呈现原则：内部可保留评分数据用于指导，但在集体复盘场景中建议不公开横向分数条，改用“支持需求+下一步动作”保护学生心态。</div>
+        </div>
+        <div class="card">
+          <span class="tag">Track Focus</span>
+          <h3 style="margin-top:12px">赛道诊断重点</h3>
+          <div id="trackCards" class="grid cols-2" style="margin-top:16px"></div>
+          <div class="quote" style="margin-top:20px">“写得好”只是基础；<br/>“讲得出来、讲得像课堂”才是拉开差距的关键。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="students" class="reveal">
+      <div class="section-head">
+        <div>
+          <span class="tag">Student Diagnostics</span>
+          <h2>逐生复盘：优点、不足与下一步动作</h2>
+        </div>
+        <p>可按赛道筛选、姓名搜索、诊断组或赛道排序。每张卡片底部附有可勾选的“打磨清单”，勾选状态会自动保存在浏览器本地。</p>
+      </div>
+      <div class="filters">
+        <button class="chip active" data-filter="全部">全部</button>
+        <button class="chip" data-filter="语文">语文</button>
+        <button class="chip" data-filter="数学">数学</button>
+        <button class="chip" data-filter="英语">英语</button>
+        <button class="chip" data-filter="科学">科学</button>
+        <input class="search" id="searchInput" placeholder="搜索姓名、课题或关键词，例如：示儿、英语、周长" />
+        <select class="search" id="sortSelect">
+          <option value="rank">按原始展示顺序</option>
+          <option value="tier">按诊断组</option>
+          <option value="track">按赛道</option>
+          <option value="name">按姓名</option>
+        </select>
+      </div>
+      <div id="studentGrid" class="student-grid"></div>
+    </section>
+
+    <section id="problems" class="reveal">
+      <div class="section-head">
+        <div>
+          <span class="tag">Common Problems</span>
+          <h2>共性问题：不是“内容不够”，而是“比赛化不足”</h2>
+        </div>
+        <p>点击下方任意问题卡片，可查看其“表现—风险—修正动作”。</p>
+      </div>
+      <div class="grid cols-4" id="problemCards"></div>
+      <div class="problem-detail card" id="problemDetail"></div>
+    </section>
+
+    <section id="standards" class="reveal">
+      <div class="section-head">
+        <div>
+          <span class="tag">Curriculum Standards & Teaching Focus</span>
+          <h2>四大学科课标取向与比赛课授课要点</h2>
+        </div>
+        <p>同样是15分钟无生授课，不同学科的“好课标准”不同。备赛时要把通用话术转化为学科内部逻辑：语文回到语言文字，数学回到概念生成，英语回到活动观与真实交际，科学回到证据与模型解释。</p>
+      </div>
+      <div class="standards-grid">
+        <div class="discipline-card">
+          <h3><span class="big-letter">英</span>小学英语：What–How–Why框架</h3>
+          <div class="framework"><b>What</b><div>本课到底让学生学会什么语言与意义？不仅是词句，还包括主题意义、语用功能、文化意识与真实交际任务。</div></div>
+          <div class="framework"><b>How</b><div>依据英语学习活动观组织“学习理解—应用实践—迁移创新”：先听懂看懂，再操练运用，最后在新情境中表达。</div></div>
+          <div class="framework"><b>Why</b><div>指向英语核心素养：语言能力、文化意识、思维品质、学习能力；结合大单元主题，说明学生为什么需要用英语解决这个生活任务。</div></div>
+          <ul class="focus-list">
+            <li><strong>比赛课要点：</strong>少讲语法术语，多给句型支架、角色卡、实物或图片；课堂指令短、慢、清楚。</li>
+            <li><strong>常见风险：</strong>词汇、句型、价值观、项目任务同时塞入，导致学生“听过很多，但真正说不出来”。</li>
+          </ul>
+        </div>
+        <div class="discipline-card">
+          <h3><span class="big-letter">语</span>小学语文：语言文字本体框架</h3>
+          <div class="framework"><b>教什么</b><div>不是只教主题思想，而是教学生如何借助词句、段落、朗读、表达方法读懂文本。</div></div>
+          <div class="framework"><b>怎么教</b><div>以学习任务群为背景，落实“朗读—品词句—找证据—说理解—迁移表达”的语文实践链。</div></div>
+          <div class="framework"><b>为什么</b><div>指向文化自信、语言运用、思维能力、审美创造。价值引导必须从文本语言中自然生长出来。</div></div>
+          <ul class="focus-list">
+            <li><strong>比赛课要点：</strong>背景资料、情境视频、人物故事都只能服务文本品读，不能替代词句教学。</li>
+            <li><strong>常见风险：</strong>古诗课变历史德育课，故事课变思维模型课，写景课变视频欣赏课。</li>
+          </ul>
+        </div>
+        <div class="discipline-card">
+          <h3><span class="big-letter">数</span>小学数学：概念生成与数学化框架</h3>
+          <div class="framework"><b>是什么</b><div>本课核心概念、关系或方法是什么？例如单位“1”、一周长度、周长、分数意义等。</div></div>
+          <div class="framework"><b>怎么来</b><div>通过真实情境、认知冲突、动手操作、比较辨析、抽象概括，让概念由学生“生长”出来。</div></div>
+          <div class="framework"><b>用到哪</b><div>用练习和生活问题检验概念是否可迁移，发展数感、量感、几何直观、推理意识、模型意识、应用意识。</div></div>
+          <ul class="focus-list">
+            <li><strong>比赛课要点：</strong>一定要暴露典型错误，如“分成几份就是平均分吗”“不封闭图形有没有周长”。</li>
+            <li><strong>常见风险：</strong>教师直接给定义，活动热闹但没有完成数学抽象。</li>
+          </ul>
+        </div>
+        <div class="discipline-card">
+          <h3><span class="big-letter">科</span>小学科学：证据链与模型解释框架</h3>
+          <div class="framework"><b>问题</b><div>从真实现象提出可探究问题，如“什么材料能让电路接通”“热在水中怎样传递”。</div></div>
+          <div class="framework"><b>证据</b><div>组织预测、设计方案、规范实验、记录现象、重复验证，把观察结果转化为证据。</div></div>
+          <div class="framework"><b>解释</b><div>用证据建构科学观念与模型，指向科学观念、科学思维、探究实践、态度责任。</div></div>
+          <ul class="focus-list">
+            <li><strong>比赛课要点：</strong>实验不是展示魔术，而是让学生经历“预测—检测—记录—解释”的证据链。</li>
+            <li><strong>常见风险：</strong>情境过度卡通化、材料过多、实验安全与规范呈现不足，削弱科学严谨性。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="toolkit" class="reveal">
+      <div class="section-head">
+        <div>
+          <span class="tag">Toolkit</span>
+          <h2>备赛工具箱：把复盘转为可训练动作</h2>
+        </div>
+        <p>将复盘意见转化为脚本、PPT、评价语、赛道专项四类工具，方便后续逐生辅导。</p>
+      </div>
+      <div class="tabs">
+        <button class="chip active" data-tab="script">15分钟脚本</button>
+        <button class="chip" data-tab="ppt">PPT重构</button>
+        <button class="chip" data-tab="feedback">评价追问语</button>
+        <button class="chip" data-tab="track">分赛道打磨</button>
+        <button class="chip" data-tab="rules">参赛规范</button>
+      </div>
+      <div class="card tab-panel active" id="tab-script">
+        <h3>15分钟无生授课脚本模板</h3>
+        <p>正式备赛不要拿完整教案直接试讲。每位同学都应重写一份按分钟切分的“无生课堂脚本”。</p>
+        <div class="script-grid" style="margin-top:16px">
+          <div class="head">时间</div><div class="head">课堂任务</div><div class="head">必须呈现的课堂感</div>
+          <div>0:00—1:30</div><div>情境导入，提出核心问题。</div><div>不是介绍课题，而是制造认知冲突。</div>
+          <div>1:30—5:00</div><div>初步观察、预测或朗读，形成第一轮发现。</div><div>呈现学生预设回答与教师追问。</div>
+          <div>5:00—10:00</div><div>核心活动展开，暴露错误或形成证据。</div><div>让评委看到“学生如何学”，不是教师如何讲。</div>
+          <div>10:00—13:00</div><div>抽象概念、总结方法或提升表达。</div><div>把活动结果上升为学科概念、阅读方法或语言支架。</div>
+          <div>13:00—15:00</div><div>迁移练习、课堂小结和板书回扣。</div><div>收束到目标，不额外扩展新内容。</div>
+        </div>
+      </div>
+      <div class="card tab-panel" id="tab-ppt">
+        <h3>比赛型PPT重构原则</h3>
+        <div class="grid cols-3" style="margin-top:16px">
+          <div class="mini"><strong>少字</strong><span>每页只承担一个教学功能，删掉教案式段落。</span></div>
+          <div class="mini"><strong>大图</strong><span>图片必须变成问题、证据或任务，不做装饰。</span></div>
+          <div class="mini"><strong>强问题</strong><span>每个活动页都应有清楚的问题或判断任务。</span></div>
+          <div class="mini"><strong>显结构</strong><span>用流程条、模型图、板书图固定课堂主线。</span></div>
+          <div class="mini"><strong>有生成</strong><span>预留学生回答、记录单、实验结果、朗读层次。</span></div>
+          <div class="mini"><strong>可匿名</strong><span>封面、页脚、文件名不得泄露学校、姓名、指导教师。</span></div>
+        </div>
+      </div>
+      <div class="card tab-panel" id="tab-feedback">
+        <h3>课堂评价语与追问链</h3>
+        <div class="grid cols-3" style="margin-top:16px">
+          <div class="card flat"><h3>肯定性评价</h3><p>“你不仅说出了结果，还说出了依据。”<br/>“你的朗读让我听到了情感变化。”</p></div>
+          <div class="card flat"><h3>推进性评价</h3><p>“这个想法很有价值，但我们还要看证据是否支持。”<br/>“谁能帮他把这一步说完整？”</p></div>
+          <div class="card flat"><h3>纠偏性评价</h3><p>“你关注到了分成几份，但还没有注意每份是否一样多。”<br/>“这个答案给了我们一个讨论靶子。”</p></div>
+        </div>
+      </div>
+      <div class="card tab-panel" id="tab-track">
+        <h3>分赛道专项训练</h3>
+        <div class="grid cols-4" style="margin-top:16px">
+          <div class="problem-card card flat"><div class="num">语</div><h3>语文</h3><p>背景、情境、价值都要回到词句、朗读和表达，避免德育化、历史化、模型化。</p></div>
+          <div class="problem-card card flat"><div class="num">数</div><h3>数学</h3><p>突出概念生成，不直接给定义。用错误暴露、操作比较和数学语言抽象推动课堂。</p></div>
+          <div class="problem-card card flat"><div class="num">英</div><h3>英语</h3><p>准确、儿童化、可交际。少讲多练，让学生真正听得懂、说得出、用得上。</p></div>
+          <div class="problem-card card flat"><div class="num">科</div><h3>科学</h3><p>突出证据意识。预测、实验、记录、解释必须完整呈现，避免实验展示化。</p></div>
+        </div>
+      </div>
+      <div class="card tab-panel" id="tab-rules">
+        <h3>正式提交前的硬性规范</h3>
+        <div class="grid cols-3" style="margin-top:16px">
+          <div class="mini"><strong>PDF</strong><span>教学设计转为PDF，控制字数和版式。</span></div>
+          <div class="mini"><strong>MP4</strong><span>教学视频不超过15分钟，画面声音清晰。</span></div>
+          <div class="mini"><strong>匿名</strong><span>作品中不得出现选手姓名、院校、指导教师。</span></div>
+          <div class="mini"><strong>一致</strong><span>视频内容必须与提交的教学设计保持一致。</span></div>
+          <div class="mini"><strong>英语</strong><span>英语赛道书面与口头表达一律用英语。</span></div>
+          <div class="mini"><strong>技术</strong><span>数字技术必须服务学习、交流和评价，而非装饰。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="reveal">
+      <div class="section-head">
+        <div>
+          <span class="tag">10-Day Sprint</span>
+          <h2>6月9日提交倒排：10天核心冲刺与录制路线图</h2>
+        </div>
+        <p>没有四周时间。真正用于“改课—试讲—返修”的核心时间约为10天，且6月5—6日必须进入正式录制窗口；6月7—8日只做核验、导出、匿名化和上传准备。</p>
+      </div>
+      <div class="timeline sprint date-plan">
+        <div class="week"><div class="week-dot">5/27</div><h3>第1天：确定课例瘦身方案</h3><p>每人锁定一个中心教学问题、一条主活动链、一个关键生成。删除多余情境、资源、理论术语和无法在15分钟内讲透的支线。</p></div>
+        <div class="week"><div class="week-dot">5/28</div><h3>第2天：完成15分钟脚本初稿</h3><p>重写无生授课脚本，按分钟切分导入、核心活动、生成、总结；同步写出学生预设回答、错误生成、追问链和评价语。</p></div>
+        <div class="week"><div class="week-dot">5/29</div><h3>第3天：教学设计同步改稿</h3><p>把教学设计改成正式提交版：目标可测、重难点聚焦、教学过程与视频一致；同时开始匿名化检查，删除姓名、学校、指导教师等信息。</p></div>
+        <div class="week"><div class="week-dot">5/30</div><h3>第4天：PPT重构到80%</h3><p>PPT压缩到12—18页，改为“少字、大图、强问题、显结构”。语文回到词句，数学突出概念生成，科学突出证据链，英语突出可交际任务。</p></div>
+        <div class="week"><div class="week-dot">5/31</div><h3>第5天：第一次计时试讲</h3><p>所有人完成一次15分钟计时试讲。只看四件事：是否超时、是否像真实课堂、核心问题是否清楚、PPT是否真正推动学习。</p></div>
+        <div class="week"><div class="week-dot">6/1</div><h3>第6天：根据试讲集中返修</h3><p>逐人修正开场、过渡语、追问链、学生生成处理、板书呈现和结尾收束。当天形成脚本第二稿与PPT第二稿。</p></div>
+        <div class="week"><div class="week-dot">6/2</div><h3>第7天：学科专项打磨</h3><p>英语逐句校音校句；语文检查是否“背景压文本”；数学检查概念是否由学生生成；科学检查预测—实验—记录—解释证据链是否完整。</p></div>
+        <div class="week"><div class="week-dot">6/3</div><h3>第8天：第二次完整试录</h3><p>按正式机位、正式PPT、正式板书走位进行试录。录后立刻回看，记录镜头、声音、眼神、停顿、互动虚假和材料遮挡问题。</p></div>
+        <div class="week"><div class="week-dot">6/4</div><h3>第9天：录制前定稿与设备彩排</h3><p>教学设计、PPT、脚本原则上定稿。检查视频时长、PPT字体、黑板贴、实验材料、英语发音、服装仪态、镜头范围和备用设备。</p></div>
+        <div class="week"><div class="week-dot">6/5</div><h3>第10天：正式录制第一批</h3><p>A组优先录制，B组完成最后一轮彩排。当天只允许小修表达和机位，不再大改教学结构；录完即做初步音画与时长检查。</p></div>
+        <div class="week"><div class="week-dot">6/6</div><h3>录制窗口：第二批与必要补录</h3><p>B组完成正式录制，A组仅做必要低风险补录。当天结束前形成每位同学的候选视频文件与备份。</p></div>
+        <div class="week"><div class="week-dot">6/7</div><h3>视频核验与材料总审</h3><p>逐个核验视频是否不超过15分钟、画面声音是否清晰、是否一镜到底、是否出现个人或院校信息；教学设计导出PDF并统一命名。</p></div>
+        <div class="week"><div class="week-dot">6/8</div><h3>上传前终审与备用包</h3><p>完成匿名化终审、文件格式检查、压缩与备份。建立“正式上传包”和“备用上传包”，不再修改教学内容。</p></div>
+        <div class="week"><div class="week-dot">6/9</div><h3>提交日：平台上传与回执确认</h3><p>按平台要求上传教学设计和教学视频，确认提交状态、文件可预览、回执或截图已保存。当天只处理平台与格式问题。</p></div>
+      </div>
+    </section>
+
+    <section class="reveal" id="sources">
+      <div class="section-head">
+        <div>
+          <span class="tag">Notes</span>
+          <h2>依据与使用说明</h2>
+        </div>
+      </div>
+      <div class="card flat">
+        <p class="source-note">本网页基于前一轮复盘文字整理生成，结合大赛通知中“教学设计30%、教学视频70%”“视频不超过15分钟”“作品须匿名”“英语赛道书面与口头表达一律用英语”等要求，以及10位学生的教学设计文本、评分结果与评委点评进行结构化呈现。为保护学生心态，集体展示版采用发展性诊断组，不强调具体分数。页面可直接在浏览器打开，也可使用右上角“打印 / PDF”输出为PDF。</p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div>© 2026 校内选拔赛复盘 · 交互式HTML诊断页</div>
+    <div>Visual system inspired by Blue Professional from beautiful-html-templates · single-file HTML</div>
+  </footer>
+
+  <script>
+    const students = [
+      {rank:1,name:'赖陈阳',track:'科学',score:88.21,theme:'《热在水中的传递》',tier:'第一梯队',verdict:'情境完整、探究主线强，具备重点打磨价值。风险在于“奶龙”情境容易吸引学生，但如果处理不好，会显得卡通化、低龄化，削弱科学课堂的严谨感。',core:'为什么热水会往上跑，冷水会往下沉？',advantages:['以5E探究模型组织课堂，有完整“吸引—探究—解释—迁移—评价”链条。','围绕热对流建立实验观察与模型解释，科学概念方向清楚。','情境有亲和力，能快速激发小学生兴趣。'],risks:['材料较多，15分钟内可能造成操作复杂、节奏拖沓。','理论词汇适合教案，不适合在试讲中过多解释。','“奶龙”情境若贯穿过满，容易显得卡通化、低龄化，削弱科学课堂的严谨感；建议只作为导入和任务线索，不进入核心科学解释。'],actions:['保留一个核心实验，突出红墨水或感温材料的流动路径；“奶龙”只负责提出问题，不替代科学证据。','PPT固定四步模型：受热水上升—较冷水下降—形成循环—热在水中传递。','试讲多用观察追问，少讲教学理论。']},
+      {rank:2,name:'李雅旻',track:'语文',score:87.71,theme:'《落花生》第二课时',tier:'第一梯队',verdict:'文本、表达方法与育人价值结合较稳，评委认可度较高。需进一步强化“语文味”。',core:'父亲为什么不只是夸花生，而是在借花生教孩子做人？',advantages:['聚焦“议花生”，能把“借物喻人”“详略得当”和“做有用的人”结合起来。','设计稳定，目标收束较好。','“寻找人间落花生”的迁移表达有比赛课亮点。'],risks:['若过早转入“做人道理”，可能削弱对父亲语言和文本表达方法的细读。','价值升华容易口号化。','需逐页核对单元、课时、标题等规范信息。'],actions:['核心环节压缩为“找特点—品父亲的话—学借物喻人写一段”。','重点品“只讲体面”的“只”字，做思辨式理解。','让学生从文本语言读出道理，再自然迁移到生活表达。']},
+      {rank:3,name:'沈卓琼',track:'数学',score:87.00,theme:'《认识周长》',tier:'第一梯队',verdict:'概念建构路径清晰，操作性强。需要从“标准课”升级为“有冲突、有生成”的比赛课。',core:'怎样才算沿着封闭图形走完“一周”？',advantages:['“感知—抽象—测量—应用”的概念发展路径清楚。','能用树叶、课本、公园步道等生活材料降低理解难度。','摸一摸、描一描、量一量、算一算活动适合三年级。'],risks:['如果只是常规操作，会显得平稳但不惊艳。','学生错误没有显性化，思维张力不足。','数学语言需避免“边线”“一圈”“周长”混用。'],actions:['设计“不封闭图形有没有周长”的判断冲突。','板书固定为：找一周—描一周—量一周—算一周。','保留“曲边用绳测，化曲为直”的关键方法。']},
+      {rank:4,name:'王琼',track:'科学',score:86.57,theme:'《导体和绝缘体》',tier:'第一梯队',verdict:'科学探究规范较好，实验与评价设计完整。需压缩容量，突出证据意识。',core:'我们凭什么判断一种材料是否容易导电？',advantages:['“生日彩灯断路”能自然引出真实问题。','预测、检测、记录、分类、迁移链条完整。','自检与重复检测体现科学证据意识。'],risks:['导体、绝缘体、人体导电、安全用电等内容若全讲，容易过载。','实验若只由教师展示，会弱化学生探究。','评价表不应只写在教案里，要在课堂中真实发生。'],actions:['只选4—5种代表材料进行核心检测。','强化“检测器自检—至少两次检测—记录—解释”。','人体导电和安全用电作为最后1分钟迁移。']},
+      {rank:5,name:'谢基华',track:'语文',score:86.29,theme:'《示儿》',tier:'第一梯队',verdict:'情感张力强，但评委分歧较大。需防止历史背景与情感渲染压过古诗文本。',core:'诗人明知“万事空”，为什么仍然“但悲”？',advantages:['“知人论世”路径有感染力，能帮助学生理解家国情怀。','角色采访、情境朗读、地图资料具有课堂参与感。','“悲”与“盼”的情感线索清楚。'],risks:['容易变成历史德育课，而非古诗课。','AI动画、视觉图、背景视频、音乐或角色表演若过多，可能喧宾夺主，稀释文本品读。','情感升华过度容易口号化。'],actions:['历史视频控制在30—45秒，地图一张足够；所有视觉资料必须服务“悲”与“盼”的词句品读。','围绕“万事空”与“但悲”的矛盾展开层层追问。','最后回到朗读背诵，让诗歌本身完成感染。']},
+      {rank:6,name:'陈红',track:'英语',score:82.14,theme:'Unit 4 Healthy food',tier:'第二梯队',verdict:'主题贴近学生，活动有趣。语言准确性和目标聚焦需要大幅提升。',core:'What food would you like for a healthy plate?',advantages:['食物与健康饮食主题贴近三年级学生生活。','magic box、healthy plate、点餐等活动能调动兴趣。','有任务型教学意识。'],risks:['存在拼写、标点和表达错误，会影响英语教师基本功判断。','词汇、句型、健康观念同时推进，容量偏大。','三年级课堂指令需更短、更慢、更动作化。'],actions:['彻底校对英语词汇与句型。','词汇压缩为bread, cake, egg, milk, juice, noodles等核心词。','最终任务简化为“I’d like some…”健康餐盘表达。']},
+      {rank:7,name:'董芝伶',track:'数学',score:80.71,theme:'《分数的意义》',tier:'第二梯队',verdict:'数学概念意识较好，但试讲节奏与概念抽象需要强化。',core:'同样是1/4，为什么有时是1个，有时是2个，有时是10个？',advantages:['“分数大王”“侦探解密”能增强概念课趣味。','彩带测量与月饼比较能引出单位“1”。','抓住了“同分数不同整体”这一关键难点。'],risks:['内容较多，15分钟内易前松后紧。','活动若与定义衔接不紧，会造成“做了活动但概念没生成”。','分数单位可能讲得匆忙。'],actions:['快速制造“同样1/4为什么不同”的认知冲突。','板书突出：单位“1”是谁—怎样平均分—取了几份。','用完整句式训练学生解释分数意义。']},
+      {rank:8,name:'李晓晴',track:'语文',score:79.64,theme:'《田忌赛马》',tier:'第二梯队',verdict:'创新意识强，但“博弈模型”需降级为备课逻辑，课堂要回到文本证据。',core:'孙膑为什么能提出这个调换顺序的办法？',advantages:['能围绕人物思维过程设计高阶问题。','“条件—推理—决策”模型有思维训练价值。','契合单元“思维的火花”的方向。'],risks:['过度模型化会让语文课变成逻辑课。','若文本朗读、人物对话和关键词不足，语文味弱。','“共赢”等总结需谨慎，避免脱离文本。'],actions:['把学生目标改为“读懂孙膑怎么想”。','每个判断回到课文证据。','增加田忌疑惑、孙膑胸有成竹的对话朗读。']},
+      {rank:9,name:'辛斯炀',track:'语文',score:79.57,theme:'《海上日出》',tier:'第二梯队',verdict:'教学设计提到了多种技术资源，但试讲中体现不足；需回到真实景象与文本语言本身。',core:'作者为什么说海上日出是“伟大的奇观”？',advantages:['写景顺序、关键词品读、朗读感悟路径完整。','“负、冲、跳”等关键词具有打磨价值。','若能聚焦“太阳升起过程”，这节课有形成鲜明片段的潜力。'],risks:['日出视频、希沃白板、电子书包等资源主要停留在教学设计表述中，授课过程没有充分转化为真实学习支架。','过多使用AI生成图片替代真实生活场景图片和视频，会背离写景散文“真实观察—语言表达—审美体验”的教学方向。','完整讲全课会导致中心不突出，容易落入“看图找句—品词仿写”的常规套路。'],actions:['优先使用真实日出图片/短视频，并明确其作用：帮助学生回到“负着重荷”“冲破”“跳出”等文本语言。','只打磨“太阳升起过程”核心片段。','朗读分层：变化顺序—画面感—赞叹感。']},
+      {rank:10,name:'张文慧',track:'英语',score:77.29,theme:'Unit 6 Shopping',tier:'第二梯队',verdict:'真实交际方向正确，但语言目标过多、课堂任务过重，需要专项重构与集中提升。',core:'Can I try them on? Are they just right?',advantages:['购物主题真实，角色扮演和Mini Charity Shop有交际意识。','能关注礼貌表达、价格询问和合理消费。','具备任务型教学雏形。'],risks:['词汇、价格、试穿、单复数、消费观念同时推进，学生负担过重。','教师英文说明偏书面化，不适合儿童课堂。','若语音语调和课堂组织不自然，会像教案汇报。'],actions:['一课一得，只抓“try them on / just right”或“How much is it/are they”之一。','PPT提供商店场景、4个商品、价格标签、句型框架、角色卡。','课堂语言短句化、动作化、重复化。']}
+    ];
+
+    const problems = [
+      {title:'教学设计完整，但不够锋利',short:'理念多、目标多、活动多、资源多，亮点被稀释。',detail:'修正动作：每节课只保留一个主问题、一个核心活动、一个关键生成和一个明确迁移。比赛课不是把教案写全，而是把学习过程打透。'},
+      {title:'无生授课像汇报教案',short:'教师讲流程多，虚拟学生、等待、追问和评价不足。',detail:'修正动作：准备“学生预设回答—教师即时评价—错误生成处理—过渡衔接语”四件套。让评委看到一间真实课堂，而不是听到一份教案说明。'},
+      {title:'PPT还没有成为教学工具',short:'图片和动画不少，但没有真正推动思考或留下结构。',detail:'修正动作：PPT要承担呈现情境、推动思考、留下结构三种功能。每页只服务一个教学节点，减少装饰性图片与教案式文字。'},
+      {title:'评价设计写得多，用得少',short:'评价表、自评互评常停留在设计文本，没有进入课堂关键节点。',detail:'修正动作：把评价嵌入预测、实验、朗读、对话、表达等关键节点。评价语必须具体指出“好在哪里、下一步怎么做”。'}
+    ];
+
+    const trackNotes = {
+      '语文':'回到语言文字：词句、朗读、文本证据、表达迁移。',
+      '数学':'突出概念生成：冲突、操作、比较、抽象。',
+      '英语':'准确与交际并重：短指令、强重复、真任务。',
+      '科学':'突出证据意识：预测、实验、记录、解释。'
+    };
+
+    let currentFilter = '全部';
+    const byId = id => document.getElementById(id);
+    const fmt = n => Number(n).toFixed(2);
+
+    function tierOrder(t){ return t === '第一梯队' ? 1 : 2; }
+    function tierName(t){ return t === '第一梯队' ? 'A组 · 重点打磨' : 'B组 · 专项提升'; }
+    function groupShort(t){ return t === '第一梯队' ? 'A组' : 'B组'; }
+
+    function filteredStudents(){
+      const q = byId('searchInput').value.trim().toLowerCase();
+      let arr = students.filter(s => currentFilter === '全部' || s.track === currentFilter);
+      if(q){ arr = arr.filter(s => (s.name+s.track+s.theme+s.verdict+s.core+s.tier).toLowerCase().includes(q)); }
+      const sort = byId('sortSelect').value;
+      arr = [...arr].sort((a,b)=>{
+        if(sort==='tier') return tierOrder(a.tier)-tierOrder(b.tier) || a.rank-b.rank;
+        if(sort==='track') return a.track.localeCompare(b.track,'zh') || tierOrder(a.tier)-tierOrder(b.tier) || a.rank-b.rank;
+        if(sort==='name') return a.name.localeCompare(b.name,'zh') || a.rank-b.rank;
+        return a.rank-b.rank;
+      });
+      return arr;
+    }
+
+    function renderBars(arr = filteredStudents()){
+      const groups = [
+        {tier:'第一梯队', title:'A组 · 重点打磨', desc:'已具备较完整参赛雏形，优先打磨样片、追问链和课堂生成。'},
+        {tier:'第二梯队', title:'B组 · 专项提升', desc:'亮点已经出现但还需要集中处理主问题聚焦、课堂容量、语言支架和试讲现场感。'}
+      ];
+      const html = `<div class="support-board">${groups.map(g=>{
+        const people = arr.filter(s=>s.tier===g.tier);
+        return `<div class="support-column"><h4>${g.title}</h4><p>${g.desc}</p>${people.length ? people.map(s=>`<span class="name-chip"><small>${s.track}</small>${s.name}</span>`).join('') : '<p>当前筛选下暂无同学</p>'}</div>`;
+      }).join('')}</div>`;
+      byId('barChart').innerHTML = html;
+    }
+
+    function renderTrackCards(){
+      const tracks = [...new Set(students.map(s=>s.track))];
+      byId('trackCards').innerHTML = tracks.map(t=>{
+        const arr = students.filter(s=>s.track===t);
+        return `<div class="mini"><strong>${t}</strong><span>${arr.length}人<br>${trackNotes[t]}</span></div>`;
+      }).join('');
+    }
+
+    function list(items){ return `<ul>${items.map(i=>`<li>${i}</li>`).join('')}</ul>`; }
+
+    function renderStudents(){
+      const arr = filteredStudents();
+      byId('studentGrid').innerHTML = arr.map(s=>{
+        const keyBase = `tjb-${s.name}`;
+        const tasks = ['核心问题','15分钟脚本','PPT重构','评价语','匿名化'].map((t,i)=>{
+          const key = `${keyBase}-${i}`;
+          const checked = localStorage.getItem(key)==='1' ? 'checked' : '';
+          return `<label class="task"><input type="checkbox" data-key="${key}" ${checked}/> ${t}</label>`;
+        }).join('');
+        return `<article class="student-card card" data-track="${s.track}">
+          <div class="student-header">
+            <div class="student-title"><div class="rank-badge">${groupShort(s.tier)}</div><div><h3>${s.name}<span class="track-pill">${s.track}</span></h3><p style="margin:0">${s.theme} · ${tierName(s.tier)}</p></div></div>
+            <div class="support-level">${tierName(s.tier)}</div>
+          </div>
+          <div class="verdict"><b>核心判断：</b>${s.verdict}</div>
+          <div class="tag">建议主问题：${s.core}</div>
+          <details><summary>优势</summary><div class="detail-body">${list(s.advantages)}</div></details>
+          <details><summary>不足与风险</summary><div class="detail-body">${list(s.risks)}</div></details>
+          <details><summary>具体改进动作</summary><div class="detail-body">${list(s.actions)}</div></details>
+          <div class="task-list">${tasks}</div>
+        </article>`;
+      }).join('') || '<div class="empty">没有找到符合条件的学生。请更换筛选或搜索词。</div>';
+      document.querySelectorAll('.task input').forEach(cb=>{
+        cb.addEventListener('change',e=> localStorage.setItem(e.target.dataset.key, e.target.checked ? '1':'0'));
+      });
+      renderBars(arr);
+    }
+
+    function renderProblems(){
+      byId('problemCards').innerHTML = problems.map((p,i)=>`<div class="problem-card card flat ${i===0?'active':''}" data-problem="${i}"><div class="num">0${i+1}</div><h3>${p.title}</h3><p>${p.short}</p></div>`).join('');
+      setProblem(0);
+      document.querySelectorAll('[data-problem]').forEach(card=>card.addEventListener('click',()=>setProblem(Number(card.dataset.problem))));
+    }
+    function setProblem(i){
+      document.querySelectorAll('[data-problem]').forEach(c=>c.classList.toggle('active', Number(c.dataset.problem)===i));
+      const p = problems[i];
+      byId('problemDetail').innerHTML = `<h3>${p.title}</h3><p>${p.detail}</p>`;
+      byId('problemDetail').classList.add('active');
+    }
+
+    document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{
+      currentFilter = btn.dataset.filter;
+      document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active', b===btn));
+      renderStudents();
+    }));
+    byId('searchInput').addEventListener('input', renderStudents);
+    byId('sortSelect').addEventListener('change', renderStudents);
+    byId('showAllChart').addEventListener('click',()=>{currentFilter='全部';document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active', b.dataset.filter==='全部'));byId('searchInput').value='';renderStudents();});
+    document.querySelectorAll('[data-tab]').forEach(btn=>btn.addEventListener('click',()=>{
+      document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b===btn));
+      document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+      byId('tab-'+btn.dataset.tab).classList.add('active');
+    }));
+    byId('themeBtn').addEventListener('click',()=>{
+      document.body.classList.toggle('dark');
+      byId('themeBtn').textContent = document.body.classList.contains('dark') ? '浅色模式' : '深色模式';
+    });
+    byId('expandAllBtn').addEventListener('click',()=>{
+      const open = byId('expandAllBtn').dataset.open !== '1';
+      document.querySelectorAll('#studentGrid details').forEach(d=>d.open=open);
+      byId('expandAllBtn').dataset.open = open ? '1':'0';
+      byId('expandAllBtn').textContent = open ? '收起全部诊断':'展开全部诊断';
+    });
+    byId('resetTasks').addEventListener('click',()=>{
+      Object.keys(localStorage).filter(k=>k.startsWith('tjb-')).forEach(k=>localStorage.removeItem(k));
+      renderStudents();
+    });
+    window.addEventListener('scroll',()=>{
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      byId('progressLine').style.width = `${Math.min(100, Math.max(0, window.scrollY / h * 100))}%`;
+    });
+    const io = new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting)e.target.classList.add('visible') }),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    renderTrackCards(); renderProblems(); renderStudents();
+  </script>
 </body>
 </html>
